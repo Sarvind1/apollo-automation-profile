@@ -1,0 +1,91 @@
+# Chrome Browser Profile - Cache and Temporary Files
+
+# Large binary cache files
+*.pma
+BrowserMetrics-spare.pma
+GraphiteDawnCache/
+GrShaderCache/
+ShaderCache/
+
+# Chrome cache data
+Default/Cache/
+Default/Code Cache/
+
+# Chrome databases and storage
+*.db
+*.db-journal
+Default/Session Storage/
+Default/IndexedDB/
+Default/Local Storage/
+
+# Chrome sync and storage
+Default/Sync Data/
+Default/GCM Store/
+Default/Feature Engagement Tracker/
+Default/Affiliation Database*
+
+# Chrome system databases
+Default/AutofillStrikeDatabase/
+Default/AutofillAiModelCache/
+Default/BudgetDatabase/
+
+# Log files
+*.log
+**/000*.log
+
+# Browser state
+Default/Site Characteristics Database/
+Default/Extension Scripts/
+Default/Extension Rules/
+Default/Extension State/
+Default/shared_proto_db/
+Default/heavy_ad_intervention_opt_out.db
+
+# Temporary files
+*-journal
+LOCK
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+.AppleDouble/
+.LSOverride/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# Python (if needed)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Node (if needed)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Large profile data (keep structure, exclude content)
+!/Default/.gitkeep
