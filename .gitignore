@@ -1,65 +1,88 @@
-# Chrome Browser Profile - Cache and Temporary Files
+################################
+# Chrome Browser Profile
+################################
 
-# Large binary cache files
+# Large binary cache and metric files
 *.pma
 BrowserMetrics-spare.pma
+BrowserMetrics.pma
+
+# GPU and Shader caches (large binary files)
 GraphiteDawnCache/
 GrShaderCache/
 ShaderCache/
+component_crx_cache/
+extensions_crx_cache/
 
-# Chrome cache data
+# Chrome HTTP cache (large binary files)
 Default/Cache/
 Default/Code Cache/
 
-# Chrome databases and storage
+# Database files and journals
 *.db
 *.db-journal
+first_party_sets.db*
+
+# Chrome storage directories
 Default/Session Storage/
 Default/IndexedDB/
 Default/Local Storage/
-
-# Chrome sync and storage
 Default/Sync Data/
 Default/GCM Store/
 Default/Feature Engagement Tracker/
-Default/Affiliation Database*
 
-# Chrome system databases
+# Chrome database directories
+Default/Affiliation Database*/
 Default/AutofillStrikeDatabase/
 Default/AutofillAiModelCache/
 Default/BudgetDatabase/
-
-# Log files
-*.log
-**/000*.log
-
-# Browser state
 Default/Site Characteristics Database/
 Default/Extension Scripts/
 Default/Extension Rules/
 Default/Extension State/
 Default/shared_proto_db/
+
+# Chrome state files
 Default/heavy_ad_intervention_opt_out.db
+Default/Network Action Predictor*
 
-# Temporary files
-*-journal
+# LevelDB transaction and lock files
+*.log
+**/000*.log
 LOCK
+*.log.old
 
-# OS-specific files
+# Journal and temporary files
+*-journal
+*-lock
+
+# Safe Browsing cache
+Safe Browsing/
+
+# Variation data
+Variations
+
+# Local browser state
+Local State
+Last Version
+
+################################
+# OS and Editor Files
+################################
+
+# macOS
 .DS_Store
-Thumbs.db
 .AppleDouble/
 .LSOverride/
+._*
+.Spotlight-V100
+.Trashes
 
-# Environment and secrets
-.env
-.env.local
-.env.*.local
-*.pem
-*.key
-*.crt
+# Windows
+Thumbs.db
+ehthumbs.db
 
-# IDE and editor files
+# IDE and Text Editor
 .vscode/
 .idea/
 *.swp
@@ -67,8 +90,33 @@ Thumbs.db
 *~
 .project
 .classpath
+*.sublime-workspace
 
-# Python (if needed)
+################################
+# Environment and Credentials
+################################
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.prod.local
+
+# Credentials and keys
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+credentials*
+*secret*
+
+################################
+# Development Dependencies
+################################
+
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -77,15 +125,44 @@ __pycache__/
 env/
 venv/
 ENV/
-.venv
+.venv/
 *.egg-info/
 dist/
 build/
 
-# Node (if needed)
+# Node.js
 node_modules/
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
 
-# Large profile data (keep structure, exclude content)
+# Ruby
+Gemfile.lock
+
+################################
+# Logs
+################################
+
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+################################
+# Build and Dist
+################################
+
+dist/
+build/
+*.o
+*.a
+*.so
+
+################################
+# Project-specific ignores
+################################
+
+# Keep git structure but exclude all content in data directories
 !/Default/.gitkeep
